@@ -20,6 +20,43 @@
         <span class="mdl-layout-title">Settings</span>
 
         <form id="options" action="#">
+
+          <div>
+            <label for="frequency">Battery Saver</label>
+            <em class="help-text">Slows the refresh rate.</em>
+            <p style="width: 100%; ">
+              <input id="frequency" class="mdl-slider mdl-js-slider"
+                type="range" min="500" max="3000" value="500" step="500"
+                value="1000" />
+            </p>
+          </div>
+
+          <div>
+            <label for="frequency">Cardinal Points</label>
+            <em class="help-text">Calculated from the angle.</em>
+            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect"
+              for="numPoints1">
+              <input id="numPoints1" name="numPoints" type="radio"
+                class="mdl-radio__button" value="8" checked />
+              <span class="mdl-radio__label">8-wind</span>
+            </label>
+            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect"
+              for="numPoints2">
+              <input id="numPoints2" name="numPoints" type="radio"
+                class="mdl-radio__button" value="16" />
+              <span class="mdl-radio__label">16-wind</span>
+            </label>
+            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect"
+              for="numPoints3">
+              <input id="numPoints3" name="numPoints" type="radio"
+                class="mdl-radio__button" value="32" />
+              <span class="mdl-radio__label">32-wind</span>
+            </label>
+          </div>
+
+
+
+
         </form>
 
         <footer>

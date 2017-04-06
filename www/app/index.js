@@ -89,8 +89,7 @@ var IS_CORDOVA = !!window.cordova;
 var app = {
   // options
   frequency: 500, // milliseconds
-  showDegrees: true,
-  numPoints: 32,
+  numPoints: 8,
 
   // internal
   degrees: null, // degrees off North
@@ -111,7 +110,8 @@ var app = {
       bindEvents(this, {'window': {'load': this.start}});
     }//end if: bound appropriate init
     bindEvents(this, {
-      'window': {'orientationchange': this.orient}
+      'window': {'orientationchange': this.orient},
+      'form input': {'change': this.change}
     });
 
     this.$heading = document.querySelector('#heading');
@@ -121,8 +121,43 @@ var app = {
     return this;
   },
 
+  change: function () {
+    var freq = document.querySelector('#frequency').value;
+    if (freq !== this.frequency) {
+      this.frequency = freq;
+      this.stop();
+      this.start();
+    }//end if: watch restarted
+
+    this.numPoints = document.querySelector('[name="numPoints"]:checked').value;
+    return this;
+  },
+
   orient: function () {
     this.orientation = screen.orientation.type;
+    return this;
+  },
+
+  render: function () {
+    var degrees = this.degrees || 0;
+    this.$direction.innerHTML = cardinalPoint(this.degrees, this.numPoints);
+    this.$heading.innerText = degrees;
+    this.$orientation.innerText = this.orientation;
+    this.$compass.style.transform =
+      'translateY(-50%) translateX(-50%) ' +
+      f('rotate', degrees + 'deg');
+    return this;
+  },
+
+  stop: function () {
+    if(!this.watch_id) { return this; }//nothing to do
+
+    if(IS_CORDOVA) {
+      navigator.compass.clearWatch(this.watch_id);
+    } else {
+      window.clearInterval(this.watch_id);
+    }//end if:stopped
+
     return this;
   },
 
@@ -161,17 +196,6 @@ var app = {
       }, this.frequency);
     }//end if: set a clock
     return this.render();
-  },
-
-  render: function () {
-    var degrees = this.degrees || 0;
-    this.$direction.innerHTML = cardinalPoint(this.degrees, this.numPoints);
-    this.$heading.innerText = degrees;
-    this.$orientation.innerText = this.orientation;
-    this.$compass.style.transform =
-      'translateY(-50%) translateX(-50%) ' +
-      f('rotate', degrees + 'deg');
-    return this;
   }
 };
 

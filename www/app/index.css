@@ -48,6 +48,15 @@ footer a {
   left: 0;
 }
 
+#options {
+  margin: 0 auto;
+  width: 80%;
+}
+
+#options label {
+  display: block;
+}
+
 .mdl-layout__content { overflow: hidden; }
 
 #heading {
@@ -56,7 +65,7 @@ footer a {
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
 
-  font-size: 2.75vh;
+  font-size: 3.5vmin;
 }
 
 #direction {
@@ -64,7 +73,7 @@ footer a {
   top: 0.5em;
   right: 0.25em;
   font-family: monospace;
-  font-size: 11vh;
+  font-size: 11vmin;
 }
 
 #compass {
@@ -87,7 +96,6 @@ footer a {
 
 .cardinal {
   position: absolute;
-  // font-size: 5em;
   font-size: 10vmin;
   font-family: monospace;
 }
@@ -114,13 +122,4 @@ footer a {
   top: 50%;
   left: 50%;
   transform: translateX(-3em) translateY(-50%);
-}
-
-
-@media (orientation: landscape) {
-  #heading { font-size: 2.25vw; }
-}
-
-@media (orientation: portrait) {
-  #heading { font-size: 2.75vh; }
 }
