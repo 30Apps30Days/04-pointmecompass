@@ -1,0 +1,117 @@
+* { -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+body {
+  -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+  -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+  -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+  background-color: #E4E4E4;
+  background-attachment: fixed;
+
+  font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+  font-size: 12px;
+
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+#app {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  cursor: default;
+  overflow: hidden;
+}
+
+#heading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+
+  font-size: 2.75vh;
+}
+
+#direction {
+  position: absolute;
+  top: 0.5em;
+  right: 0.25em;
+  font-family: monospace;
+  font-size: 11vh;
+}
+
+#compass {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  transition: all 0.5s;
+
+  max-width: 95%;
+  max-height: 95%;
+}
+
+#orientation {
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+  display: none;
+}
+
+.cardinal {
+  position: absolute;
+  font-size: 5em;
+  font-family: monospace;
+}
+
+#point-north {
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-2em);
+}
+
+#point-south {
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(2em);
+}
+
+#point-east {
+  bottom: 50%;
+  right: 50%;
+  transform: translateX(2em) translateY(-50%);
+}
+
+#point-west {
+  top: 50%;
+  left: 50%;
+  transform: translateX(-2em) translateY(-50%);
+}
+
+footer {
+  position: fixed;
+  right: 1em;
+  left: 1em;
+  bottom: 1em;
+  text-align: center;
+}
+
+footer a {
+  color: #00BCD4;
+  font-weight: bold;
+}
+
+@media (orientation: landscape) {
+  #heading { font-size: 2.25vw; }
+}
+
+@media (orientation: portrait) {
+  #heading { font-size: 2.75vh; }
+}
