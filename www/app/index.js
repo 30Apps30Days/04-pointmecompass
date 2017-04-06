@@ -90,7 +90,7 @@ var app = {
   // options
   frequency: 500, // milliseconds
   showDegrees: true,
-  numPoints: 16,
+  numPoints: 32,
 
   // internal
   degrees: null, // degrees off North
