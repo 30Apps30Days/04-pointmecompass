@@ -1,0 +1,29 @@
+[{
+  "type": "group",
+  "title": "Settings",
+  "items":[{
+    "title": "Frequency",
+    "type":"textfield",
+    "key":"frequency"
+  }, {
+    "title":"Cardinal Points",
+    "type":"radio",
+    "key":"numPoints",
+    "default": 8,
+    "items":[{
+      "value": 8,
+      "title": "8-wind"
+    }, {
+      "value": 16,
+      "title": "16-wind"
+    }, {
+      "value": 32,
+      "title": "32-wind"
+    }]
+  }, {
+    "title":"Debug",
+    "type": "toggle",
+    "default": false,
+    "key": "debug"
+  }]
+}]

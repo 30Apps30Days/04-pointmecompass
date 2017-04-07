@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy"
+      content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <title>Point Me Compass</title>
+
+    <link rel="stylesheet" href="lib/material-design-lite/material.min.css" />
+    <script src="lib/material-design-lite/material.min.js"></script>
+    <link rel="stylesheet" href="lib/material-icons-font/icon.css" />
+    <link rel="stylesheet" href="app/index.css" />
+  </head>
+  <body>
+    <div id="app" class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Point Me</span>
+
+        <form id="options" action="#">
+          <div>
+            <label for="frequency">Battery Saver</label>
+            <em class="help-text">Slows the refresh rate.</em>
+            <p style="width: 100%; ">
+              <input id="frequency" class="mdl-slider mdl-js-slider"
+                type="range" min="500" max="3000" value="500" step="500"
+                value="1000" />
+            </p>
+          </div>
+
+          <div>
+            <label for="frequency">Cardinal Points</label>
+            <em class="help-text">Calculated from the angle.</em>
+            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect"
+              for="numPoints-8">
+              <input id="numPoints-8" name="numPoints" type="radio"
+                class="mdl-radio__button" value="8" checked />
+              <span class="mdl-radio__label">8-wind</span>
+            </label>
+            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect"
+              for="numPoints-16">
+              <input id="numPoints-16" name="numPoints" type="radio"
+                class="mdl-radio__button" value="16" />
+              <span class="mdl-radio__label">16-wind</span>
+            </label>
+            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect"
+              for="numPoints-32">
+              <input id="numPoints-32" name="numPoints" type="radio"
+                class="mdl-radio__button" value="32" />
+              <span class="mdl-radio__label">32-wind</span>
+            </label>
+          </div>
+        </form>
+
+        <footer>
+          <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="mailto:metaist@metaist.com">
+              Send Feedback
+              <i class="material-icons" style="float: right;">feedback</i>
+            </a>
+          </nav>
+
+          Idea by Richard Garcia<br />
+          Icon by
+          <a href="http://www.flaticon.com/authors/yannick">Yannick</a><br />
+          App by <a href="http://metaist.com">Metaist LLC</a>
+        </footer>
+
+      </div>
+      <main class="mdl-layout__content page-content">
+        <span id="direction">&mdash;</span>
+        <span id="heading">000.00</span>
+        <span id="orientation"></span>
+
+        <span class="cardinal" id="point-north">N</span>
+        <span class="cardinal" id="point-east">E</span>
+        <span class="cardinal" id="point-south">S</span>
+        <span class="cardinal" id="point-west">W</span>
+
+        <svg id="compass"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns="http://www.w3.org/2000/svg"
+          version="1.1"
+          x="0px"
+          y="0px"
+          height="95%"
+          viewBox="0 0 497.199 497.199"
+          style="enable-background:new 0 0 497.199 497.199;"
+          xml:space="preserve">
+          <g>
+            <path d="m 305.99807,249.00449 c 0.26886,-38.19906 -56.18631,-172.499721 -56.18631,-172.499721 0,0 -58.34198,133.492681 -58.61084,171.691741 -0.22874,32.49919 24.49539,57.57383 56.99458,57.80257 32.4992,0.22874 57.57383,-24.49539 57.80257,-56.99459 z m -95.59863,-0.67286 c 0.1478,-20.99948 17.46944,-38.07799 38.46891,-37.93019 20.99948,0.14781 38.078,17.46844 37.9302,38.46792 -0.1478,20.99947 -17.46844,38.079 -38.46791,37.9312 -20.99949,-0.14781 -38.079,-17.46944 -37.9312,-38.46893 z" />
+            <path d="M 497.19334,250.35019 C 498.16249,112.6536 388.04578,0.9758127 250.34918,0.00665674 112.65159,-0.96250591 0.97480965,109.15422 0.00565401,246.85081 -0.9635087,384.5484 109.15123,496.22417 246.84982,497.19334 384.54641,498.1625 496.22418,388.04778 497.19334,250.35019 Z M 19.105181,246.98524 C 19.993398,120.78837 124.01688,18.21796 250.21475,19.106184 376.41163,19.994401 478.98203,124.01889 478.09381,250.21576 477.20559,376.41363 373.18111,478.98303 246.98424,478.09482 120.78636,477.20659 18.216958,373.18311 19.105181,246.98524 Z" />
+          </g>
+        </svg>
+      </main>
+    </div>
+
+
+    <script src="cordova.js"></script>
+    <script src="app/index.js"></script>
+  </body>
+</html>

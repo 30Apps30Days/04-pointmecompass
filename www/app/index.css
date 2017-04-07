@@ -1,0 +1,126 @@
+* { -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+body {
+  /* prevent callout to copy image, etc when tap to hold */
+  -webkit-touch-callout: none;
+
+  /* prevent webkit from resizing text to fit */
+  -webkit-text-size-adjust: none;
+
+  /* prevent copy paste, to allow, change 'none' to 'text' */
+  -webkit-user-select: none;
+
+  background-color: #E4E4E4;
+  background-attachment: fixed;
+
+  font-size: 12px;
+  font-family:
+    'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+footer {
+  position: fixed;
+  right: 1em;
+  left: 1em;
+  bottom: 1em;
+  text-align: center;
+}
+
+footer a {
+  color: #00BCD4;
+  font-weight: bold;
+}
+
+#app {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+#options {
+  margin: 0 auto;
+  width: 80%;
+}
+
+#options label {
+  display: block;
+}
+
+.mdl-layout__content { overflow: hidden; }
+
+#heading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+
+  font-size: 3.5vmin;
+}
+
+#direction {
+  position: absolute;
+  top: 0.5em;
+  right: 0.25em;
+  font-family: monospace;
+  font-size: 11vmin;
+}
+
+#compass {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  transition: all 0.5s;
+
+  max-width: 90%;
+  max-height: 90%;
+}
+
+#orientation {
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+
+  display: none; // DEBUG
+}
+
+.cardinal {
+  position: absolute;
+  font-size: 10vmin;
+  font-family: monospace;
+}
+
+#point-north {
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-3em);
+}
+
+#point-south {
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(3em);
+}
+
+#point-east {
+  bottom: 50%;
+  right: 50%;
+  transform: translateX(3em) translateY(-50%);
+}
+
+#point-west {
+  top: 50%;
+  left: 50%;
+  transform: translateX(-3em) translateY(-50%);
+}
