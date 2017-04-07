@@ -125,7 +125,6 @@ var app = {
   },
 
   change: function () {
-    console.log('this.change');
     var freq = parseInt(this.$frequency.value, 10);
     if (freq !== this.frequency) {
       this.frequency = freq;
