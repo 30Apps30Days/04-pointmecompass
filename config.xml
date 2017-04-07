@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.metaist.muhwagegap" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Point Me Compass</name>
+<widget id="com.metaist.pointme" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Point Me</name>
     <description>
     Basic compass.
   </description>
@@ -27,4 +27,6 @@
     <engine name="android" spec="~6.1.2" />
     <plugin name="cordova-plugin-device-orientation" spec="~1.0.6" />
     <plugin name="cordova-plugin-screen-orientation" spec="~2.0.0" />
+    <plugin name="cordova-plugin-app-preferences" spec="~0.99.3" />
+    <engine name="browser" spec="~4.1.0" />
 </widget>
